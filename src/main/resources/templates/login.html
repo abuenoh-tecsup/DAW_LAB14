@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" />
+</head>
+<body>
+<h2>Iniciar Sesión</h2>
+<form th:action="@{/login}" method="post">
+    <div>
+        <label>Usuario:</label>
+        <input type="text" name="username" />
+    </div>
+    <div>
+        <label>Contraseña:</label>
+        <input type="password" name="password" />
+    </div>
+    <div>
+        <button type="submit">Ingresar</button>
+    </div>
+</form>
+<p th:if="${param.error}">Usuario o contraseña inválidos</p>
+<p th:if="${param.logout}">Has cerrado sesión correctamente</p>
+</body>
+</html>
